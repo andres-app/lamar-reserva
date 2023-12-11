@@ -42,8 +42,7 @@ function limpiar(){
     $("#modelo").selectpicker('refresh');
     $("#anio").val("");
     $("#color").val("");
-	$("#motor").val("");
-	$("#combustible").selectpicker('refresh');
+    $("#motor").val("");
     $("#tipo").selectpicker('refresh');
     $("#poliza").selectpicker('refresh');
     $("#ult_mantenimiento").val("");
@@ -177,9 +176,7 @@ function mostrar(id){
             $("#modelo").selectpicker('refresh');
 			$("#anio").val(data.anio);
 			$("#color").val(data.color);
-			$("#motor").val(data.motor);
-			$("#combustible").val(data.combustible);
-            $("#combustible").selectpicker('refresh');
+            $("#motor").val(data.motor);
             $("#tipo").val(data.tipo);
             $("#tipo").selectpicker('refresh');
             $("#poliza").val(data.poliza);

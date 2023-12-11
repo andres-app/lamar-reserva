@@ -1,4 +1,4 @@
-<?php
+<?php 
 //activamos almacenamiento en el buffer
 ob_start();
 session_start();
@@ -34,7 +34,7 @@ if ($_SESSION['acceso']==1) {
           </div>
         </div>
       </div><!-- /.container-fluid -->
-
+ 
             <div class="panel-body table-responsive" id="listadoregistros">
                 <table id="tbllistado" class="text-nowrap table table-striped table-bordered table-condensed table-hover">
 					<thead>
@@ -60,7 +60,7 @@ if ($_SESSION['acceso']==1) {
 					<th>Login</th>
 					<th>Foto</th>
 					<th>Estado</th>
-					</tfoot>
+					</tfoot>   
                 </table>
           </div>
 
@@ -111,7 +111,7 @@ if ($_SESSION['acceso']==1) {
 		    <div class="form-group col-lg-6 col-md-6 col-xs-12">
 		      <label>Permisos</label>
 		      <ul id="permisos" style="list-style: none;">
-
+		        
 		      </ul>
 		    </div>
 		    <div class="form-group col-lg-6 col-md-6 col-xs-12">
@@ -127,7 +127,7 @@ if ($_SESSION['acceso']==1) {
 		    </div>
 		  </form>
 		</div>
-		<div class="panel-body" id="formulario_clave">
+		<div class="panel-body" id="formulario_clave"> 
 		  <form action="" name="formularioc" id="formularioc" method="POST">
 		       <div class="form-group">
 		            <label for="recipient-name" class="col-form-label">Nueva clave:</label>
@@ -148,9 +148,9 @@ if ($_SESSION['acceso']==1) {
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-<?php
+<?php 
 }else{
- require 'noacceso.php';
+ require 'noacceso.php'; 
 }
 require 'footer.php';
  ?>
@@ -162,7 +162,7 @@ require 'footer.php';
 				placeholder : 'Seleccione su foto',
 			});
 		</script>
- <?php
+ <?php 
 }
 
 ob_end_flush();

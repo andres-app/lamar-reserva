@@ -45,7 +45,6 @@ if ($_SESSION['vehiculo']==1) {
                     <th>Año</th>
                     <th>Color</th>
                     <th>Motor</th>
-                    <th>Combustible</th>
                     <th>Tipo</th>
                     <th>Poliza</th>
                     <th>Mantenimiento</th>
@@ -63,7 +62,6 @@ if ($_SESSION['vehiculo']==1) {
                     <th>Año</th>
                     <th>Color</th>
                     <th>Motor</th>
-                    <th>Combustible</th>
                     <th>Tipo</th>
                     <th>Poliza</th>
                     <th>Mantenimiento</th>
@@ -77,67 +75,60 @@ if ($_SESSION['vehiculo']==1) {
           <div class="panel-body" id="formularioregistros">
           <form action="" name="formulario" id="formulario" method="POST">
             <div class="row">
-            <div class="form-group col-lg-4 col-md-4 col-xs-12">
+            <div class="form-group col-lg-6 col-md-6 col-xs-12">
               <label for="">Placa(*)</label>
               <input class="form-control" type="hidden" name="id" id="id">
               <input class="form-control" type="text" name="placa" id="placa" maxlength="100" placeholder="Placa" required onkeyup="mayus(this);" autofocus="autofocus"/> 
             </div>
 
-            <div class="form-group col-lg-4 col-md-4 col-xs-12">
+            <div class="form-group col-lg-6 col-md-6 col-xs-12">
               <label for="">Marca(*)</label>
             <select class="form-control select-picker" name="marca" id="marca" data-live-search="true" required>
 
             </select>
             </div>
 
-            <div class="form-group col-lg-4 col-md-4 col-xs-12">
+            <div class="form-group col-lg-6 col-md-6 col-xs-12">
               <label for="">Modelo(*)</label>
             <select class="form-control select-picker" name="modelo" id="modelo" data-live-search="true" required>
 
             </select>
             </div>
 
-            <div class="form-group col-lg-4 col-md-4 col-xs-12">
+            <div class="form-group col-lg-6 col-md-6 col-xs-12">
               <label for="">Año</label>
               <input class="form-control" type="text" name="anio" id="anio" maxlength="70" placeholder="2020">
             </div>
 
-            <div class="form-group col-lg-4 col-md-4 col-xs-12">
+            <div class="form-group col-lg-6 col-md-6 col-xs-12">
               <label for="">Color</label>
               <input class="form-control" type="text" name="color" id="color" maxlength="20" placeholder="Color" onkeyup="mayus(this);">
             </div>
 
-            <div class="form-group col-lg-4 col-md-4 col-xs-12">
+            <div class="form-group col-lg-6 col-md-6 col-xs-12">
               <label for="">Motor</label>
               <input class="form-control" type="text" name="motor" id="motor" maxlength="50" placeholder="Motor" onkeyup="mayus(this);">
             </div>
-            <div class="form-group col-lg-4 col-md-4 col-xs-12">
-              <label for="">Combustible(*)</label>
-              <select class="form-control select-picker" name="combustible" id="combustible" data-live-search="true" required>
-                <option value="Gasolina">Gasolina</option>
-                <option value="Diesel">Diesel</option>
-                <option value="Gas">Gas</option>
-            </select>
-            </div>
-            <div class="form-group col-lg-4 col-md-4 col-xs-12">
+
+            <div class="form-group col-lg-6 col-md-6 col-xs-12">
               <label for="">Tipo(*)</label>
             <select class="form-control select-picker" name="tipo" id="tipo" data-live-search="true" required>
 
             </select>
             </div>
 
-            <div class="form-group col-lg-4 col-md-4 col-xs-12">
+            <div class="form-group col-lg-6 col-md-6 col-xs-12">
               <label for="">Poliza(*)</label>
             <select class="form-control select-picker" name="poliza" id="poliza" data-live-search="true" required>
 
             </select>
             </div>
-            <div class="form-group col-lg-4 col-md-4 col-xs-12">
+            <div class="form-group col-lg-6 col-md-6 col-xs-12">
               <label for="">Ultimo Mant.(*)</label>
               <input class="form-control" type="date" name="ult_mantenimiento" id="ult_mantenimiento" maxlength="20">
             </div>
 
-            <div class="form-group col-lg-4 col-md-4 col-xs-12">
+            <div class="form-group col-lg-6 col-md-6 col-xs-12">
               <label for="">Proximo Mant.</label>
               <input class="form-control" type="date" name="prox_mantenimiento" id="prox_mantenimiento" maxlength="20">
             </div>

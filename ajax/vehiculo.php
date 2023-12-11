@@ -10,7 +10,6 @@ $modelo=isset($_POST["modelo"])? limpiarCadena($_POST["modelo"]):"";
 $anio=isset($_POST["anio"])? limpiarCadena($_POST["anio"]):"";
 $color=isset($_POST["color"])? limpiarCadena($_POST["color"]):"";
 $motor=isset($_POST["motor"])? limpiarCadena($_POST["motor"]):"";
-$combustible=isset($_POST["combustible"])? limpiarCadena($_POST["combustible"]):"";
 $tipo=isset($_POST["tipo"])? limpiarCadena($_POST["tipo"]):"";
 $poliza=isset($_POST["poliza"])? limpiarCadena($_POST["poliza"]):"";
 $condicion=isset($_POST["condicion"])? limpiarCadena($_POST["condicion"]):"";
@@ -22,10 +21,10 @@ $prox_mantenimiento=isset($_POST["prox_mantenimiento"])? limpiarCadena($_POST["p
 switch ($_GET["op"]) {
 	case 'guardaryeditar':
 		if (empty($id)) {
-			$rspta=$vehiculo->insertar($placa,$marca,$modelo,$anio,$color,$motor,$combustible,$tipo,$poliza,$ult_mantenimiento,$prox_mantenimiento);
+			$rspta=$vehiculo->insertar($placa,$marca,$modelo,$anio,$color,$motor,$tipo,$poliza,$ult_mantenimiento,$prox_mantenimiento);
 			echo $rspta ? "Datos registrados correctamente" : "No se pudo registrar los datos";
 		}else{
-			 $rspta=$vehiculo->editar($id,$placa,$marca,$modelo,$anio,$color,$motor,$combustible,$tipo,$poliza,$ult_mantenimiento,$prox_mantenimiento);
+			 $rspta=$vehiculo->editar($id,$placa,$marca,$modelo,$anio,$color,$motor,$tipo,$poliza,$ult_mantenimiento,$prox_mantenimiento);
 			echo $rspta ? "Datos actualizados correctamente" : "No se pudo actualizar los datos";
 		}
 	break;
@@ -58,13 +57,12 @@ switch ($_GET["op"]) {
             "4"=>$reg->anio,
             "5"=>$reg->color,
 			"6"=>$reg->motor,
-			"7"=>$reg->combustible,
-			"8"=>$reg->tipo,
-			"9"=>$reg->poliza,
-			"10"=>$reg->ult_mantenimiento,
-			"11"=>$reg->prox_mantenimiento,
-			"12"=>($reg->condicion)?'<span class="badge badge-success">Disponible</span>':'<span class="badge badge-warning">Alquilado</span>',
-            "13"=>($reg->estado)?'<span class="badge badge-success">Activado</span>':'<span class="badge badge-danger">Desactivado</span>'
+			"7"=>$reg->tipo,
+			"8"=>$reg->poliza,
+			"9"=>$reg->ult_mantenimiento,
+			"10"=>$reg->prox_mantenimiento,
+			"11"=>($reg->condicion)?'<span class="badge badge-success">Disponible</span>':'<span class="badge badge-warning">Alquilado</span>',
+            "12"=>($reg->estado)?'<span class="badge badge-success">Activado</span>':'<span class="badge badge-danger">Desactivado</span>'
               );
 		}
 		$results=array(
@@ -73,21 +71,14 @@ switch ($_GET["op"]) {
              "iTotalDisplayRecords"=>count($data),//enviamos el total de registros a visualizar
              "aaData"=>$data);
 		echo json_encode($results);
-		break; 
+		break;
 
 	case 'select_disponibles':
 		$rspta = $vehiculo->select_disponibles();
 		echo '<option value="">Seleccione...</option>';
 		while ($reg = $rspta->fetch_object()) {
-			echo '<option value="'.$reg->id.'">'.$reg->placa.' '.$reg->modelo_v.'</option>';
+			echo '<option value="'.$reg->id.'">'.$reg->placa.' '.$reg->modelo.'</option>';
 		}
 	break;
-	case 'select_e':
-		$id_e=$_REQUEST["id_e"];
-		$rspta = $vehiculo->select_e($id_e);
-		while ($reg = $rspta->fetch_object()) {
-			echo '<option value="'.$reg->id.'">'.$reg->placa.' '.$reg->modelo_v.'</option>';
-		}
-	break; 
 }
  ?>

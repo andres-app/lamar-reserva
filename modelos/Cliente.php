@@ -11,14 +11,14 @@ public function __construct(){
 }
 
 //metodo insertar regiustro
-public function insertar($tipo_cliente,$nombre,$apellidos,$tipo_documento,$num_documento,$direccion,$telefono,$email,$licencia){
-	$sql="INSERT INTO cliente (tipo_cliente,nombre,apellidos,tipo_documento,num_documento,direccion,telefono,email,licencia) VALUES ('$tipo_cliente','$nombre','$apellidos','$tipo_documento','$num_documento','$direccion','$telefono','$email','$licencia')";
+public function insertar($nombre,$apellidos,$tipo_documento,$num_documento,$direccion,$telefono,$email,$licencia){
+	$sql="INSERT INTO cliente (nombre,apellidos,tipo_documento,num_documento,direccion,telefono,email,licencia) VALUES ('$nombre','$apellidos','$tipo_documento','$num_documento','$direccion','$telefono','$email','$licencia')";
 	return ejecutarConsulta($sql);
 }
 
 
-public function editar($idcliente,$tipo_cliente,$nombre,$apellidos,$tipo_documento,$num_documento,$direccion,$telefono,$email,$licencia){
-	$sql="UPDATE cliente SET tipo_cliente='$tipo_cliente', nombre='$nombre',apellidos='$apellidos',tipo_documento='$tipo_documento',num_documento='$num_documento',direccion='$direccion',telefono='$telefono',email='$email', licencia='$licencia' 
+public function editar($idcliente,$nombre,$apellidos,$tipo_documento,$num_documento,$direccion,$telefono,$email,$licencia){
+	$sql="UPDATE cliente SET nombre='$nombre',apellidos='$apellidos',tipo_documento='$tipo_documento',num_documento='$num_documento',direccion='$direccion',telefono='$telefono',email='$email', licencia='$licencia' 
 	WHERE idcliente='$idcliente'";
 	return ejecutarConsulta($sql);
 }

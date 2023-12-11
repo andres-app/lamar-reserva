@@ -3,14 +3,12 @@
     <div class="float-right d-sm-none d-md-block">
       <b>Version</b> 0.1.1
     </div>
-    <strong>Copyright &copy; 2020-2021 <a target="_blank" href="https://www.appsauri.com">Appsauri Peru</a></strong> Todo los derechos
+    <strong>Copyright &copy; 2020-2021 <a target="_blank" href="https://www.compartiendocodigos.com">CompartiendoCódigos</a></strong> Todo los derechos
     reservados.
 </footer>
 </div>
 <!-- ./wrapper -->
 
-<!-- ENVIO DE EMAILS -->
-<script src="scripts/envio_email.js"></script>
 <!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
 <script src="../public/plugins/jquery/jquery.min.js"></script>

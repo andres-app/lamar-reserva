@@ -1,22 +1,24 @@
 <?php 
 //ip de la pc servidor base de datos
-define('DB_HOST', 'localhost');
+define("DB_HOST", "localhost");
 
 // nombre de la base de datos
-define('DB_NAME', 'app-lamar');
+//define("DB_NAME", "sistema_alquierauto");
+define("DB_NAME", "app_lamar");
+
 
 //nombre de usuario de base de datos
-//define('DB_USERNAME', 'root');
-define('DB_USERNAME', 'root');
+//define("DB_USERNAME", "root");
+define("DB_USERNAME", "root");
 
 //conraseña del usuario de base de datos
-//define('DB_PASSWORD', '');
-define('DB_PASSWORD', ''); 
+//define("DB_PASSWORD", "");
+define("DB_PASSWORD", "");
 
 //codificacion de caracteres
-define('DB_ENCODE', 'utf8');
+define("DB_ENCODE", "utf8");
 
 //nombre del proyecto
-define('PRO_NOMBRE', 'Appsauri');
+define("PRO_NOMBRE", "CompartiendoCodigos");
  
-?>
+ ?>

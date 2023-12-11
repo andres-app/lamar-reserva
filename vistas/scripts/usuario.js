@@ -6,7 +6,7 @@ function init(){
    mostrarform_clave(false);
    listar();
 $("#formularioc").on("submit",function(c){
-   	editar_clave(c);
+   	editar_clave(c); 
    })
    $("#formulario").on("submit",function(e){
    	guardaryeditar(e);
@@ -22,7 +22,7 @@ $.post("../ajax/usuario.php?op=permisos&id=", function(r){
 //funcion limpiar
 function limpiar(){
 	$("#nombre").val("");
-    $("#num_documento").val("");
+    $("#num_documento").val(""); 
 	$("#direccion").val("");
 	$("#telefono").val("");
 	$("#email").val("");
@@ -133,7 +133,7 @@ function listar(){
 
 //funcion para guardaryeditar
 function guardaryeditar(e){
-     e.preventDefault();//no se activara la accion predeterminada
+     e.preventDefault();//no se activara la accion predeterminada 
      $("#btnGuardar").prop("disabled",true);
      var formData=new FormData($("#formulario")[0]);
 
@@ -164,7 +164,7 @@ $("#claves").show();
 }
 
 function editar_clave(c){
-     c.preventDefault();//no se activara la accion predeterminada
+     c.preventDefault();//no se activara la accion predeterminada 
      $("#btnGuardar_clave").prop("disabled",true);
      var formData=new FormData($("#formularioc")[0]);
 
@@ -200,7 +200,7 @@ function mostrar(idusuario){
 			mostrarform(true);
 			if ($("#idusuario").val(data.idusuario).length==0) {
            	$("#claves").show();
-
+           	
            }else{
 			$("#claves").hide();
 			}
@@ -213,13 +213,13 @@ function mostrar(idusuario){
             $("#email").val(data.email);
             $("#cargo").val(data.cargo);
             $("#login").val(data.login);
-
+        
             $("#imagenmuestra").show();
             $("#imagenmuestra").attr("src","../files/usuarios/"+data.imagen);
             $("#imagenactual").val(data.imagen);
             $("#idusuario").val(data.idusuario);
 
-
+ 
 		});
 	$.post("../ajax/usuario.php?op=permisos&id="+idusuario, function(r){
 	$("#permisos").html(r);
