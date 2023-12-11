@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Lamarperu | Login</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Font Awesome -->
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="../public/plugins/font-awesome/css/font-awesome.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../public/dist/css/adminlte.min.css">
+  <style>
+    .logo {
+      position: relative;
+      height: 100px;
+      width: 100%;
+      background: url('../files/login/logo.png') no-repeat center;
+      background-size: contain !important;
+    }
+
+    body {
+      background: url('../files/login/fondo.jpg') no-repeat center !important;
+      background-size: cover !important;
+    }
+  </style>
+</head>
+
+<body class="hold-transition login-page">
+  <div class="login-box">
+    <a href="login.html">
+      <div class="logo">
+      </div>
+    </a>
+    <!-- /.login-logo -->
+    <div class="card">
+      <div class="card-body login-card-body">
+        <p class="login-box-msg">Ingrese sus datos de Acceso</p>
+
+        <form method="post" id="frmAcceso">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fa fa-user"></i></span>
+            </div>
+            <input type="text" id="logina" name="logina" class="form-control" placeholder="Usuario">
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fa fa-key"></i></span>
+            </div>
+            <input type="password" id="clavea" name="clavea" class="form-control" placeholder="Password">
+          </div>
+          <div class="row">
+
+
+            <div class="col-md-12">
+              <button type="submit" class="btn btn-danger form-control">Ingresar</button>
+            </div><!-- /.col -->
+          </div>
+        </form>
+        <!-- /.social-auth-links -->
+
+      </div>
+      <!-- /.login-card-body -->
+    </div>
+  </div>
+  <!-- /.login-box -->
+
+  <!-- jQuery -->
+  <script src="../public/plugins/jquery/jquery.min.js"></script>
+  <script src="../public/dist/js/plugins/popper/popper.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="../public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- AdminLTE App -->
+  <script src="../public/dist/js/adminlte.js"></script>
+  <!-- iCheck -->
+
+
+  <script src="../public/js/bootbox.min.js"></script>
+  <script src="../public/js/bootbox.locales.min.js"></script>
+  <script src="../public/dist/js/bootstrap-select.min.js"></script>
+
+  <!-- PAGE PLUGINS -->
+  <!-- SparkLine -->
+
+  <!-- PAGE SCRIPTS -->
+  <script type="text/javascript" src="scripts/login.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script>
+    $(function () {
+      $('input').iCheck({
+        checkboxClass: 'icheckbox_square-blue',
+        radioClass: 'iradio_square-blue',
+        increaseArea: '20%' // optional
+      })
+    })
+  </script>
+</body>
+
+</html>
