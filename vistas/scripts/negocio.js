@@ -76,13 +76,29 @@ function listar(){
 	tabla=$('#tbllistado').dataTable({
 		"aProcessing": true,//activamos el procedimiento del datatable
 		"aServerSide": true,//paginacion y filrado realizados por el server
-		dom: 'Bfrtip',//definimos los elementos del control de la tabla
+        lengthChange: false,
 		buttons: [
-                  'copyHtml5',
-                  'excelHtml5',
-                  'csvHtml5',
-                  'pdf'
-		],
+			{
+                extend: 'excelHtml5',
+				//messageTop: 'Reporte de vehiculos',
+				title: 'Empresa',
+				sheetName: 'Empresa',
+				exportOptions: {
+                    columns: ':visible'
+                }
+			},
+			{
+                extend: 'pdfHtml5',
+				//messageTop: 'Reporte de vehiculos',
+				title: 'Empresa',
+                download: 'open',
+                //orientation: 'landscape',
+                pageSize: 'A3',
+				exportOptions: {
+                    columns: ':visible'
+                }
+			}
+			 ],
 		"ajax":
 		{
 			url:'../ajax/negocio.php?op=listar',
@@ -94,7 +110,10 @@ function listar(){
 		},
 		"bDestroy":true,
 		"iDisplayLength":5,//paginacion
-		"order":[[0,"desc"]]//ordenar (columna, orden)
+		"order":[[0,"desc"]],//ordenar (columna, orden)
+		initComplete: function () {
+			tabla.buttons().container().appendTo('#tbllistado_wrapper .col-md-6:eq(0)');
+		  }
 	}).DataTable();
 }
 //funcion para guardaryeditar
@@ -111,9 +130,17 @@ function guardaryeditar(e){
      	processData: false,
 
      	success: function(datos){
-     		bootbox.alert(datos);
-     		mostrarform(false);
-     		tabla.ajax.reload();
+			var tabla = $('#tbllistado').DataTable();
+
+			Swal.fire({
+				position: 'center',
+				icon: 'success',
+				title: datos,
+				showConfirmButton: false,
+				timer: 1000
+			  });
+		 mostrarform(false);
+		 tabla.ajax.reload();
      	}
      });
 
@@ -149,25 +176,51 @@ function mostrar(id_negocio){
 
 //funcion para desactivar
 function desactivar(id_negocio){
-	bootbox.confirm("¿Esta seguro de desactivar este dato?", function(result){
-		if (result) {
+	Swal.fire({
+		//title: 'Eliminar?',
+		text: "Esá seguro de desactivar ?",
+		icon: 'warning',
+		showCancelButton: true,
+		confirmButtonColor: '#d33',
+		cancelButtonColor: '#3085d6',
+		confirmButtonText: 'Si, desactivar',
+		cancelButtonText: 'No, cancelar'
+	  }).then((result) => {
+		if (result.isConfirmed) {
 			$.post("../ajax/negocio.php?op=desactivar", {id_negocio : id_negocio}, function(e){
-				bootbox.alert(e);
-				tabla.ajax.reload();
-			});
-		}
-	})
+		  Swal.fire(
+			  e,
+			  'Desactivado!',
+			  'success');
+			  var tabla = $('#tbllistado').DataTable();
+			  tabla.ajax.reload();
+	}
+	)};
+		  });
 }
 
 function activar(id_negocio){
-	bootbox.confirm("¿Esta seguro de activar este dato?" , function(result){
-		if (result) {
+	Swal.fire({
+		//title: 'Eliminar?',
+		text: "Esá seguro de activar ?",
+		icon: 'warning',
+		showCancelButton: true,
+		confirmButtonColor: '#d33',
+		cancelButtonColor: '#3085d6',
+		confirmButtonText: 'Si, activar',
+		cancelButtonText: 'No, cancelar'
+	  }).then((result) => {
+		if (result.isConfirmed) {
 			$.post("../ajax/negocio.php?op=activar" , {id_negocio : id_negocio}, function(e){
-				bootbox.alert(e);
-				tabla.ajax.reload();
-			});
-		}
-	})
+		  Swal.fire(
+			  e,
+			  'Activado!',
+			  'success');
+			  var tabla = $('#tbllistado').DataTable();
+			  tabla.ajax.reload();
+	}
+	)};
+		  });
 }
 
 

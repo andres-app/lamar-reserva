@@ -28,13 +28,29 @@ function listar(){
 	tabla=$('#tbllistado').dataTable({
 		"aProcessing": true,//activamos el procedimiento del datatable
 		"aServerSide": true,//paginacion y filrado realizados por el server
-		dom: 'Bfrtip',//definimos los elementos del control de la tabla
+        lengthChange: false,
 		buttons: [
-                  'copyHtml5',
-                  'excelHtml5',
-                  'csvHtml5',
-                  'pdf'
-		],
+			{
+                extend: 'excelHtml5',
+				//messageTop: 'Reporte de vehiculos',
+				title: 'Permisos',
+				sheetName: 'Permisos',
+				exportOptions: {
+                    columns: ':visible'
+                }
+			},
+			{
+                extend: 'pdfHtml5',
+				//messageTop: 'Reporte de vehiculos',
+				title: 'Permisos',
+                download: 'open',
+                //orientation: 'landscape',
+                pageSize: 'A3',
+				exportOptions: {
+                    columns: ':visible'
+                }
+			}
+			 ],
 		"ajax":
 		{
 			url:'../ajax/permiso.php?op=listar',
@@ -46,7 +62,10 @@ function listar(){
 		},
 		"bDestroy":true,
 		"iDisplayLength":10,//paginacion
-		"order":[[0,"desc"]]//ordenar (columna, orden)
+		"order":[[0,"desc"]],//ordenar (columna, orden)
+		initComplete: function () {
+			tabla.buttons().container().appendTo('#tbllistado_wrapper .col-md-6:eq(0)');
+		  }
 	}).DataTable();
 }
 

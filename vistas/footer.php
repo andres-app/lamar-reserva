@@ -9,6 +9,8 @@
 </div>
 <!-- ./wrapper -->
 
+<!-- ENVIO DE EMAILS -->
+<script src="scripts/envio_email.js"></script>
 <!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
 <script src="../public/plugins/jquery/jquery.min.js"></script>

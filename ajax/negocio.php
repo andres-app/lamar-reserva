@@ -110,7 +110,7 @@ case 'mostrar_simbolo':
 
 	while ($reg=$rspta->fetch_object()) {
 		$data[]=array(
-			"0"=>($reg->condicion)?'<button class="btn btn-warning btn-xs" id="btn_lista" onclick="mostrar('.$reg->id_negocio.')"><i class="fa fa-pencil"></i></button>'.' '.'<button class="btn btn-danger btn-xs" onclick="desactivar('.$reg->id_negocio.')"><i class="fa fa-close"></i></button>':'<button class="btn btn-warning btn-xs" onclick="mostrar('.$reg->id_negocio.')"><i class="fa fa-pencil"></i></button>'.' '.'<button class="btn btn-primary btn-xs" onclick="activar('.$reg->id_negocio.')"><i class="fa fa-check"></i></button>',
+			"0"=>($reg->condicion)?'<button class="btn btn-warning btn-sm" id="btn_lista" onclick="mostrar('.$reg->id_negocio.')"><i class="fa fa-pencil"></i></button>'.' '.'<button class="btn btn-danger btn-sm" onclick="desactivar('.$reg->id_negocio.')"><i class="fa fa-close"></i></button>':'<button class="btn btn-warning btn-sm" onclick="mostrar('.$reg->id_negocio.')"><i class="fa fa-pencil"></i></button>'.' '.'<button class="btn btn-primary btn-sm" onclick="activar('.$reg->id_negocio.')"><i class="fa fa-check"></i></button>',
 			"1"=>"<img src='../files/negocio/".$reg->logo."' height='50px' width='50px'>",
 			"2"=>$reg->nombre,
 			"3"=>$reg->ndocumento.'-'.$reg->documento,

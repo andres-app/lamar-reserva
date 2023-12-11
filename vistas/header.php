@@ -33,7 +33,8 @@ require_once "../modelos/Negocio.php";
  <link rel="stylesheet" type="text/css" href="../public/plugins/bootstrap/css/bootstrap.min.css">
     <!-- Font Awesome -->
     <!-- Theme style -->
-   
+  <!-- iCheck for checkboxes and radio inputs -->
+  <link rel="stylesheet" href="../public/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="apple-touch-icon" href="../public/img/apple-touch-icon.png">
@@ -47,9 +48,11 @@ require_once "../modelos/Negocio.php";
   <link rel="stylesheet" href="../public/datatables/datatables-responsive/css/responsive.bootstrap4.min.css">
   <link rel="stylesheet" href="../public/datatables/datatables-buttons/css/buttons.bootstrap4.min.css">
 
-    <link href="../public/plugins/iCheck/flat/blue.css" rel="stylesheet">
     <link href="../public/plugins/datepicker/datepicker3.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../public/dist/css/bootstrap-select.min.css">
+
+<!--firma digital-->
+  <link rel="stylesheet" href="../signature_pad/docs/css/signature-pad.css">
 
 </head>
 <body class="hold-transition sidebar-mini text-sm">
@@ -59,20 +62,21 @@ require_once "../modelos/Negocio.php";
 
 <div class="wrapper">
   <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand navbar-dark bg-primary border-bottom">
+              <!--main-header navbar navbar-expand navbar-dark navbar-danger-->
+  <nav class="main-header navbar navbar-expand navbar-dark bg-danger border-bottom">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="escritorio.php" class="nav-link">Inicio</a>
+        <a href="escritorio" class="nav-link">Inicio</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="alquiler.php" class="nav-link">Alquiler</a>
+        <a href="alquiler" class="nav-link">Alquiler</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="vehiculo.php" class="nav-link">Vehículo</a>
+        <a href="vehiculo" class="nav-link">Vehículo</a>
       </li>
     </ul>
     <!-- Right navbar links -->
@@ -93,7 +97,7 @@ require_once "../modelos/Negocio.php";
           </div>
           <div class="dropdown-divider"></div>
           <div class="dropdown-item">
-          <a href="../ajax/usuario.php?op=salir" class="btn btn-block btn-secondary"><i class="fa fa-power-off"></i> Cerrar Sesión</a>
+          <a href="../ajax/usuario?op=salir" class="btn btn-block btn-secondary"><i class="fa fa-power-off"></i> Cerrar Sesión</a>
         </div>
       </div>
       </li>
@@ -102,9 +106,10 @@ require_once "../modelos/Negocio.php";
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+
+  <aside class="main-sidebar sidebar-dark-danger elevation-4">
     <!-- Brand Logo -->
-    <a href="#" class="brand-link bg-primary">
+    <a href="#" class="brand-link bg-danger">
        <?php echo "<img src='../files/negocio/".$logo."' alt='AdminLTE Logo' class='brand-image img-circle elevation-3'
            style='opacity: .8'>" ; ?>
       
@@ -131,7 +136,7 @@ require_once "../modelos/Negocio.php";
        <?php 
           if ($_SESSION['escritorio']==1) {
               echo '<li class="nav-item has-treeview menu-open">
-                      <a href="../vistas/escritorio.php" class="nav-link active">
+                      <a href="../vistas/escritorio" class="nav-link active">
                         <i class="nav-icon fa fa-dashboard"></i>
                         <p>
                           Escritorio
@@ -152,7 +157,7 @@ require_once "../modelos/Negocio.php";
                   </a>
                   <ul class="nav nav-treeview">
                     <li class="nav-item">
-                      <a href="../vistas/cliente.php" class="nav-link">
+                      <a href="../vistas/cliente" class="nav-link">
                         <i class="fa fa-circle-o nav-icon"></i>
                         <p>Clientes</p>
                       </a>
@@ -175,23 +180,23 @@ require_once "../modelos/Negocio.php";
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="../vistas/alquiler.php" class="nav-link">
+                <a href="../vistas/alquiler" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>Alquiler</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../vistas/garantia.php" class="nav-link">
-                  <i class="fa fa-circle-o nav-icon"></i>
-                  <p>Garantías</p>
-                </a>
-              </li>
-              <li class="nav-item">
-              <a href="../vistas/ralquiler.php" class="nav-link">
+              <a href="../vistas/ralquiler" class="nav-link">
                 <i class="fa fa-circle-o nav-icon"></i>
                 <p>Reporte</p>
               </a>
             </li>
+              <li class="nav-item">
+                <a href="../vistas/garantia" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Garantías</p>
+                </a>
+              </li>
             </ul>
           </li>';
     }
@@ -209,31 +214,31 @@ require_once "../modelos/Negocio.php";
             </a>
             <ul class="nav nav-treeview">
                 <li class="nav-item">
-                <a href="../vistas/vehiculo.php" class="nav-link">
+                <a href="../vistas/vehiculo" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>Vehículos</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../vistas/tipo_vehiculo.php" class="nav-link">
+                <a href="../vistas/tipo_vehiculo" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>Tipo Vehículo</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../vistas/marca_vehiculo.php" class="nav-link">
+                <a href="../vistas/marca_vehiculo" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>Marca vehículo</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../vistas/modelo_vehiculo.php" class="nav-link">
+                <a href="../vistas/modelo_vehiculo" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>Modelo vehículo</p>
                 </a>
               </li>
               <li class="nav-item">
-              <a href="../vistas/poliza.php" class="nav-link">
+              <a href="../vistas/poliza" class="nav-link">
                 <i class="fa fa-circle-o nav-icon"></i>
                 <p>Poliza</p>
               </a>
@@ -242,7 +247,30 @@ require_once "../modelos/Negocio.php";
           </li>';
     }
 ?>  
-          
+
+      <?php 
+        if ($_SESSION['clientes']==1) {
+          echo '<li class="nav-item has-treeview">
+                  <a href="#" class="nav-link">
+                    <i class="nav-icon fa fa-truck"></i>
+                    <p>
+                      Proveedores
+                      <i class="fa fa-angle-left right"></i>
+                    </p>
+                  </a>
+                  <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                      <a href="../vistas/proveedor" class="nav-link">
+                        <i class="fa fa-circle-o nav-icon"></i>
+                        <p>Proveedores</p>
+                      </a>
+                    </li>
+
+                  </ul>
+                </li>';
+            }
+      ?> 
+
 <?php 
   if ($_SESSION['acceso']==1) {
     echo '<li class="nav-item has-treeview">
@@ -255,22 +283,28 @@ require_once "../modelos/Negocio.php";
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="../vistas/usuario.php" class="nav-link">
+                <a href="../vistas/usuario" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>Usuarios</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../vistas/permiso.php" class="nav-link">
+                <a href="../vistas/permiso" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>Permiso</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../vistas/email" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Email enviados</p>
                 </a>
               </li>
             </ul>
           </li>';
     }
 ?>
-          
+           
 <?php 
   if ($_SESSION['configuracion']==1) {
    echo '<li class="nav-item has-treeview">
@@ -283,21 +317,21 @@ require_once "../modelos/Negocio.php";
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="../vistas/negocio.php" class="nav-link">
+                <a href="../vistas/negocio" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>Datos Generales</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../vistas/doc.php" class="nav-link">
+                <a href="../vistas/documentos" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
-                  <p>Doc</p>
+                  <p>Documentos</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../vistas/documentos.php" class="nav-link">
+                <a href="../vistas/configmail" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
-                  <p>Documentos</p>
+                  <p>Email</p>
                 </a>
               </li>
             </ul>
@@ -317,7 +351,7 @@ require_once "../modelos/Negocio.php";
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="../vistas/alquilerfecha.php" class="nav-link">
+                <a href="../vistas/alquilerfecha" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>Alquiler por fecha</p>
                 </a>
@@ -339,7 +373,7 @@ require_once "../modelos/Negocio.php";
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="../vistas/consltafechacliente.php" class="nav-link">
+                <a href="../vistas/consultafechacliente" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>Consulta de por fechas</p>
                 </a>

@@ -46,10 +46,13 @@ if ($_SESSION['alquiler']==1) {
                     <th>Valor/Dia</th>
                     <th>Fecha inicio</th>
                     <th>Fecha entrega</th>
+                    <th>Fecha entrega real</th>
                     <th>Hora entrega</th>
+                    <th>Hora entrega real</th>
                     <th>Garantía</th>
+                    <th>Dias exedidos</th>
                     <th>Total pago</th>
-                    <th>Estado</th>
+                    <th>Estado alquiler</th>
                   </thead>
                   <tbody>
                   </tbody>
@@ -62,10 +65,13 @@ if ($_SESSION['alquiler']==1) {
                     <th>Valor/Dia</th>
                     <th>Fecha inicio</th>
                     <th>Fecha entrega</th>
+                    <th>Fecha entrega real</th>
                     <th>Hora entrega</th>
+                    <th>Hora entrega real</th>
                     <th>Garantía</th>
+                    <th>Dias exedidos</th>
                     <th>Total pago</th>
-                    <th>Estado</th>
+                    <th>Estado alquiler</th>
                   </tfoot>   
                 </table>
           </div>

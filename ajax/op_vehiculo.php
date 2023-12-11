@@ -100,16 +100,16 @@ switch ($_GET["op"]) {
 		echo '<option value="0">seleccione...</option>';
 		while ($reg=$rspta->fetch_object()) {
 			echo '<option value=' . $reg->id.'>'.$reg->valor.'</option>';
-			}
+		}
 	break;
 
 	case 'selectModelo':
-		$item='Modelo';
-		$rspta=$op_vehiculo->select($item); 
+		              $item='Modelo';
+		   $rspta=$op_vehiculo->select($item); 
 		echo '<option value="0">seleccione...</option>';
-		while ($reg=$rspta->fetch_object()) {
-			echo '<option value=' . $reg->id.'>'.$reg->valor.'</option>';
-			}
+		 while ($reg=$rspta->fetch_object()) {
+		echo '<option value=' . $reg->id.'>'.$reg->valor.'</option>';
+		}
 	break;
 
 }
