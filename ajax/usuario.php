@@ -166,14 +166,14 @@ switch ($_GET["op"]) {
 			}
 
 			//determinamos lo accesos al usuario
-			in_array(1, $valores)?$_SESSION['escritorio']=1:$_SESSION['escritorio']=1;
-			in_array(2, $valores)?$_SESSION['clientes']=1:$_SESSION['clientes']=1;
-			in_array(3, $valores)?$_SESSION['alquiler']=1:$_SESSION['alquiler']=1;
-			in_array(4, $valores)?$_SESSION['vehiculo']=1:$_SESSION['vehiculo']=1;
-			in_array(5, $valores)?$_SESSION['acceso']=1:$_SESSION['acceso']=1;
-			in_array(6, $valores)?$_SESSION['consultac']=1:$_SESSION['consultac']=1;
-			in_array(7, $valores)?$_SESSION['consultav']=1:$_SESSION['consultav']=1;
-			in_array(8, $valores)?$_SESSION['configuracion']=1:$_SESSION['configuracion']=1; 
+			in_array(1, $valores)?$_SESSION['escritorio']=1:$_SESSION['escritorio']=0;
+			in_array(2, $valores)?$_SESSION['clientes']=1:$_SESSION['clientes']=0;
+			in_array(3, $valores)?$_SESSION['alquiler']=1:$_SESSION['alquiler']=0;
+			in_array(4, $valores)?$_SESSION['vehiculo']=1:$_SESSION['vehiculo']=0;
+			in_array(5, $valores)?$_SESSION['acceso']=1:$_SESSION['acceso']=0;
+			in_array(6, $valores)?$_SESSION['consultac']=1:$_SESSION['consultac']=0;
+			in_array(7, $valores)?$_SESSION['consultav']=1:$_SESSION['consultav']=0;
+			in_array(8, $valores)?$_SESSION['configuracion']=1:$_SESSION['configuracion']=0; 
 
 		}
 		echo json_encode($fetch);

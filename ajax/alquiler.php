@@ -68,7 +68,7 @@ switch ($_GET["op"]) {
 
 	case 'editar':
 
-			 $rspta=$alquiler->editar($id,$tipo_e,$cliente_e,$vehiculo_e,$dias_e,$monto_dia_e,$f_inicio_e,$f_entrega_estimado_e,$h_entrega_empresa_e,$garantia_e,$total_pagado_e,$observaciones_al_e,$km_e,$punto_entrega_e,$combustible_al_e);
+			 $rspta=$alquiler->editar($id,$tipo_e,$cliente_e,$vehiculo_e,$dias_e,$monto_dia_e,$f_inicio_e,$f_entrega_estimado_e,$h_entrega_empresa_e,$garantia_e,$total_pagado_e,$observaciones_al_e,$km_e,$punto_entrega_e,$combustible_al_e); 
 			echo $rspta ? "Datos actualizados correctamente" : "No se pudo actualizar los datos";
 
 	break;

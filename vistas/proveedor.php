@@ -40,23 +40,25 @@ if ($_SESSION['clientes']==1) {
           <table id="tbllistado" class="text-nowrap table table-striped table-bordered table-condensed table-hover">
             <thead>
               <th>Opciones</th>
-              <th>Tipo persona</th>
-              <th>Nombres</th>
               <th>Documento</th>
-              <th>Numero</th>
-              <th>Telefono</th>
+              <th>Nombres</th>
               <th>Email</th>
+              <th>Telefono</th>
+              <th>Marca vehículo</th>
+              <th>Placa vehículo</th>
+              <th>Modelo vehículo</th>
             </thead>
             <tbody>
             </tbody>
             <tfoot>
               <th>Opciones</th>
-              <th>Tipo persona</th>
-              <th>Nombres</th>
               <th>Documento</th>
-              <th>Numero</th>
-              <th>Telefono</th>
+              <th>Nombres</th>
               <th>Email</th>
+              <th>Telefono</th>
+              <th>Marca vehículo</th>
+              <th>Placa vehículo</th>
+              <th>Modelo vehículo</th>
             </tfoot>
           </table>
         </div>

@@ -40,7 +40,7 @@ if ($_SESSION['clientes']==1) {
           <table id="tbllistado" class="text-nowrap table table-striped table-bordered table-condensed table-hover">
             <thead>
               <th>Opciones</th>
-              <th>Tipo persona</th>
+              <th>Documentos</th>
               <th>Nombres</th>
               <th>Documento</th>
               <th>Numero</th>
@@ -52,7 +52,7 @@ if ($_SESSION['clientes']==1) {
             </tbody>
             <tfoot>
               <th>Opciones</th>
-              <th>Tipo persona</th>
+              <th>Documentos</th>
               <th>Nombres</th>
               <th>Documento</th>
               <th>Numero</th>

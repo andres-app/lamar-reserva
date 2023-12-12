@@ -46,8 +46,9 @@ switch ($_GET["op"]) {
             "2"=>$reg->nombres,
             "3"=>$reg->email,
             "4"=>$reg->telefono,
-            "5"=>$reg->placa_vehiculo,
-			"6"=>$reg->modelo_vehiculo
+			"5"=>$reg->marca_vehiculo,
+            "6"=>$reg->placa_vehiculo,
+			"7"=>$reg->modelo_vehiculo
               );
 		}
 		$results=array(

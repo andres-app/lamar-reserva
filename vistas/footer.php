@@ -1,9 +1,9 @@
  <footer class="main-footer">
     <!-- To the right -->
     <div class="float-right d-sm-none d-md-block">
-      <b>Version</b> 1.5
+      <b>Version</b> 0.1.1
     </div>
-    <strong>Copyright &copy; 2020-2021 <a target="_blank" href="https://www.appsauri.com">Appsauri Perú</a></strong> Todo los derechos
+    <strong>Copyright &copy; 2020-2021 <a target="_blank" href="https://www.appsauri.com">Appsauri Peru</a></strong> Todo los derechos
     reservados.
 </footer>
 </div>

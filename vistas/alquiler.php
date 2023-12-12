@@ -556,11 +556,11 @@ if ($_SESSION['alquiler']==1) {
 
           <div class="form-group col-lg-12 col-md-12 col-xs-12">
             <label for="">Frontal:</label>
-            <img src="" alt="" width="450px" height="250px" id="dnianverso">
+            <img src="" class="img-thumbnail" alt="" width="450px" height="250px" id="dnianverso">
           </div>
           <div class="form-group col-lg-12 col-md-12 col-xs-12">
             <label for="">Reverso:</label>
-            <img src="" alt="" width="450px" height="250px" id="dnireverso">
+            <img src="" class="img-thumbnail" alt="" width="450px" height="250px" id="dnireverso">
           </div>
         </div>
         <!-- /.col -->
